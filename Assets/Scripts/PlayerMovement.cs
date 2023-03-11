@@ -44,13 +44,15 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        isGround = Physics2D.OverlapBox(checkGround.position, new Vector2(1, 1), 0, groundLayer);
         jumpCard = PlayerInventory.instance.GetCardAmount("jump");
         dashCard = PlayerInventory.instance.GetCardAmount("dash");
         flyCard = PlayerInventory.instance.GetCardAmount("fly");
 
+        CheckGround();
         MovePlayer();
         Dash();
+
+        PlayerAnimation.instance.CheckFall(rb.velocity.y);
 
         if(!isFly)
         {
@@ -67,6 +69,7 @@ public class PlayerMovement : MonoBehaviour
                     rb.velocity = new Vector2(rb.velocity.x, jumpForce);
                     PlayerInventory.instance.UseCard("jump");
                 }
+                PlayerAnimation.instance.JumpAnim(true);
             }
         }
         else
@@ -135,6 +138,11 @@ public class PlayerMovement : MonoBehaviour
                 rb.velocity = Vector2.zero;
             }
         }
+    }
+    private void CheckGround()
+    {
+        isGround = Physics2D.OverlapBox(checkGround.position, new Vector2(1, 1), 0, groundLayer);
+        PlayerAnimation.instance.JumpAnim(!isGround);
     }
 
     private void Slider()
