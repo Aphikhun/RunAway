@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 20d0a3118b225c641a5c1afb4d4be953
+guid: bfc97a38a883a064784a2901ce8d2298
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -93,18 +93,18 @@ ScriptedImporter:
     spritePosition: {x: 0, y: 0}
   mosaicSpriteImportData: []
   rigSpriteImportData:
-  - name: up_0
+  - name: 00
     originalName: 
-    pivot: {x: 0.6547456, y: 0.49548614}
-    alignment: 9
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 5
-      y: 727
-      width: 438
-      height: 715
-    spriteID: f7b66d9063a489c40872f93968d5b220
+      x: 4
+      y: 707
+      width: 613
+      height: 650
+    spriteID: 7dab7ca2ea29f3b4b9488bf90518ed0f
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -113,42 +113,20 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: 5, y: 727}
-    spritePosition: {x: 0, y: 0}
-  - name: up_1
+    uvTransform: {x: 4, y: 707}
+    spritePosition: {x: 2303, y: 144}
+  - name: 01
     originalName: 
-    pivot: {x: 0.6430306, y: 0.49535227}
-    alignment: 9
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 462
-      y: 728
-      width: 424
-      height: 715
-    spriteID: d9219a4e541440d4e8c9c635fc3bc29c
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    parentGroupIndex: -1
-    uvTransform: {x: 462, y: 728}
-    spritePosition: {x: 0, y: 0}
-  - name: up_2
-    originalName: 
-    pivot: {x: 0.6643045, y: 0.49419042}
-    alignment: 9
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 4
       y: 4
-      width: 450
-      height: 715
-    spriteID: 2fc1188b771507f42aed4b3c86464d5a
+      width: 589
+      height: 695
+    spriteID: 786093fc570653a4eadd2e32d8c7e02b
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -158,19 +136,19 @@ ScriptedImporter:
     tessellationDetail: 0
     parentGroupIndex: -1
     uvTransform: {x: 4, y: 4}
-    spritePosition: {x: 0, y: 0}
-  - name: up_3
+    spritePosition: {x: 1280, y: 130}
+  - name: 02
     originalName: 
-    pivot: {x: 0.6455758, y: 0.49187794}
-    alignment: 9
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 464
-      y: 6
-      width: 428
-      height: 716
-    spriteID: cbb2bffe95e1d82489a67a8c84f735a3
+      x: 4
+      y: 1365
+      width: 521
+      height: 674
+    spriteID: 9ee0bca8f600d8940933f1041f8a6445
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -179,8 +157,8 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: 464, y: 6}
-    spritePosition: {x: 0, y: 0}
+    uvTransform: {x: 4, y: 1365}
+    spritePosition: {x: 300, y: 133}
   characterData:
     bones: []
     parts: []
@@ -211,43 +189,33 @@ ScriptedImporter:
   resliceFromLayer: 0
   mosaicPSDLayers: []
   rigPSDLayers:
-  - name: Folder16
-    spriteName: Folder16
+  - name: 00
+    spriteName: 00
     isGroup: 0
     parentIndex: -1
-    spriteID: 7537959e17967fe4dabf5e4a5c6a574b
-    layerID: 148
-    mosaicPosition: {x: 4, y: 727}
+    spriteID: 7dab7ca2ea29f3b4b9488bf90518ed0f
+    layerID: 5
+    mosaicPosition: {x: 4, y: 707}
     flatten: 0
     isImported: 1
     isVisible: 1
-  - name: Folder15
-    spriteName: Folder15
+  - name: 01
+    spriteName: 01
     isGroup: 0
     parentIndex: -1
-    spriteID: 57f0b77a196068241b11f157c4023fe0
-    layerID: 149
+    spriteID: 786093fc570653a4eadd2e32d8c7e02b
+    layerID: 4
     mosaicPosition: {x: 4, y: 4}
     flatten: 0
     isImported: 1
     isVisible: 1
-  - name: Folder14
-    spriteName: Folder14
+  - name: 02
+    spriteName: 02
     isGroup: 0
     parentIndex: -1
-    spriteID: 92cb2caa10c151946a9ceb7eb0d63de9
-    layerID: 150
-    mosaicPosition: {x: 462, y: 728}
-    flatten: 0
-    isImported: 1
-    isVisible: 1
-  - name: Folder13
-    spriteName: Folder13
-    isGroup: 0
-    parentIndex: -1
-    spriteID: 8fc7a48fca71b4f4b99e9265dc9b1333
-    layerID: 151
-    mosaicPosition: {x: 462, y: 4}
+    spriteID: 9ee0bca8f600d8940933f1041f8a6445
+    layerID: 3
+    mosaicPosition: {x: 4, y: 1365}
     flatten: 0
     isImported: 1
     isVisible: 1
