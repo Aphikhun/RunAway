@@ -78,6 +78,7 @@ public class PlayerHealth : MonoBehaviour
         if(collision.CompareTag("Damageable") && canDamage)
         {
             GetDamage();
+            Destroy(collision.gameObject);
         }
     }
     private void CanGetDamage()
