@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.UIElements;
 using UnityEngine.SceneManagement;
+using Unity.VisualScripting;
 
 public class GameManager : MonoBehaviour
 {
@@ -41,8 +42,11 @@ public class GameManager : MonoBehaviour
         SetCardAmount();
         PlayerDie();
 
-        hp_txt.text = PlayerHealth.instance.hp.ToString();
-        score_txt.text = score.ToString();
+        if(hp_txt != null && score_txt != null)
+        {
+            hp_txt.text = PlayerHealth.instance.hp.ToString();
+            score_txt.text = score.ToString();
+        }
 
         if(Input.GetKeyDown(KeyCode.Escape) && !PlayerHealth.instance.isDie)
         {
@@ -88,20 +92,25 @@ public class GameManager : MonoBehaviour
     private void SetCardAmount()
     {
         int i = 0;
-
-        foreach(var cards in PlayerInventory.instance.Cards)
+        if(card_txt.Length > 0)
         {
-            card_txt[i].text = cards.Value.ToString();
-            i++;
+            foreach (var cards in PlayerInventory.instance.Cards)
+            {
+                card_txt[i].text = cards.Value.ToString();
+                i++;
+            }
         }
     }
     private void PlayerDie()
     {
-        if (PlayerHealth.instance.isDie)
+        if(card_txt.Length > 0)
         {
-            Time.timeScale = 0f;
-            result_txt.text = score.ToString();
-            GameOverPanel.SetActive(true);
+            if (PlayerHealth.instance.isDie)
+            {
+                Time.timeScale = 0f;
+                result_txt.text = score.ToString();
+                GameOverPanel.SetActive(true);
+            }
         }
     }
     public void CloseOption()
