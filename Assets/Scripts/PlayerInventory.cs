@@ -17,7 +17,7 @@ public class PlayerInventory : MonoBehaviour
         Cards["speed"] = 0;
         Cards["jump"] = 0;
         Cards["hp"] = 0;
-        Cards["fly"] = 1;
+        Cards["fly"] = 0;
         Cards["dash"] = 0;
         Cards["shield"] = 0;
 

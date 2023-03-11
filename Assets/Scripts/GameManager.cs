@@ -88,6 +88,7 @@ public class GameManager : MonoBehaviour
     private void SetCardAmount()
     {
         int i = 0;
+
         foreach(var cards in PlayerInventory.instance.Cards)
         {
             card_txt[i].text = cards.Value.ToString();
