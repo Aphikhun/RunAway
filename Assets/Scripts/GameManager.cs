@@ -21,6 +21,9 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] private GameObject GameOverPanel = null;
 
+    private bool isOption = false;
+    [SerializeField] private GameObject OptionPanel = null;
+
     [SerializeField] private Text[] card_txt = null;
     // Start is called before the first frame update
     void Awake()
@@ -43,13 +46,17 @@ public class GameManager : MonoBehaviour
 
         if(Input.GetKeyDown(KeyCode.Escape) && !PlayerHealth.instance.isDie)
         {
-            if(!isPause)
+            if(!isPause && !isOption)
             {
                 Pause();
             }
-            else
+            else if(isPause && !isOption)
             {
                 Continue();
+            }
+            else if(isOption)
+            {
+                CloseOption();
             }
         }
 
@@ -96,6 +103,10 @@ public class GameManager : MonoBehaviour
             GameOverPanel.SetActive(true);
         }
     }
+    public void CloseOption()
+    {
+        OptionPanel.SetActive(false);
+    }
     public void Pause()
     {
         Time.timeScale = 0f;
@@ -123,6 +134,10 @@ public class GameManager : MonoBehaviour
     public void MainMenu()
     {
         SceneManager.LoadScene("MainMenu");
+    }
+    public void Option()
+    {
+        OptionPanel.SetActive(true);
     }
     private void ShowInventory()
     {
