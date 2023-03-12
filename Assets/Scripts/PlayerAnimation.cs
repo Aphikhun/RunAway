@@ -12,12 +12,24 @@ public class PlayerAnimation : MonoBehaviour
         instance = this;
     }
 
+    public void RunAnim(bool isRun)
+    {
+        playerAnim.SetBool("isBoost", isRun);
+    }
+
     public void JumpAnim(bool isJump)
     {
-        playerAnim.SetBool("isJump", isJump);
+        StartCoroutine(Jump(isJump));
     }
     public void CheckFall(float jumpVelocity)
     {
         playerAnim.SetFloat("yVelocity", jumpVelocity);
+    }
+
+    IEnumerator Jump(bool isJump)
+    {
+        playerAnim.SetBool("isJump", isJump);
+        yield return new WaitForSeconds(0.1f);
+        playerAnim.SetBool("loopJump", isJump);
     }
 }
