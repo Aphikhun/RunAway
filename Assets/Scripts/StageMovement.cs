@@ -5,7 +5,6 @@ using UnityEngine;
 public class StageMovement : MonoBehaviour
 {
     private float speed;
-    private float duration = 10f;
 
     private GameManager gameManager;
 
