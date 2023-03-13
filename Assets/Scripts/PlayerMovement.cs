@@ -82,7 +82,7 @@ public class PlayerMovement : MonoBehaviour
                         rb.velocity = new Vector2(rb.velocity.x, jumpForce);
                         PlayerInventory.instance.UseCard("jump");
                     }
-                    PlayerAnimation.instance.JumpAnim(true);
+                    PlayerAnimation.instance.JumpAnim(true,isSpeed);
                 }
             }
             else
@@ -186,7 +186,7 @@ public class PlayerMovement : MonoBehaviour
     private void CheckGround()
     {
         isGround = Physics2D.OverlapBox(checkGround.position, new Vector2(0.5f, 1), 0, groundLayer);
-        PlayerAnimation.instance.JumpAnim(!isGround);
+        PlayerAnimation.instance.JumpAnim(!isGround,isSpeed);
     }
 
     private void Slider()
