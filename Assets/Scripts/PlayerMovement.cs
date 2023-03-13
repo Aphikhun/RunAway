@@ -119,14 +119,14 @@ public class PlayerMovement : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Alpha4) && flyCard > 0 && canDo && !isSpeed)
             {
                 PlayerInventory.instance.UseCard("fly");
-
+                fly_count = fly_dur;
                 isFly = true;
             }
 
             if (Input.GetKeyDown(KeyCode.Alpha1) && speedCard > 0 && !isFly)
             {
                 PlayerInventory.instance.UseCard("speed");
-
+                speed_time = speed_dur;
                 isSpeed = true;
             }
 
