@@ -19,9 +19,12 @@ public class StageMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        speed = playerMovement.stageSpeed;
+        if (!PlayerHealth.instance.isDie)
+        {
+            speed = playerMovement.stageSpeed;
 
-        MoveScene(speed);
+            MoveScene(speed);
+        }
     }
     private void MoveScene(float useSpeed)
     {

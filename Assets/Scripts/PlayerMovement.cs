@@ -54,85 +54,87 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        jumpCard = PlayerInventory.instance.GetCardAmount("jump");
-        dashCard = PlayerInventory.instance.GetCardAmount("dash");
-        flyCard = PlayerInventory.instance.GetCardAmount("fly");
-        speedCard = PlayerInventory.instance.GetCardAmount("speed");
-
-        CheckGround();
-        MovePlayer();
-        StageMove();
-        Slider();
-        Dash();
-
-        PlayerAnimation.instance.CheckFall(rb.velocity.y);
-
-        if(!isFly)
+        if(!PlayerHealth.instance.isDie)
         {
-            if (Input.GetKeyDown(KeyCode.Space) && canDo)
+            jumpCard = PlayerInventory.instance.GetCardAmount("jump");
+            dashCard = PlayerInventory.instance.GetCardAmount("dash");
+            flyCard = PlayerInventory.instance.GetCardAmount("fly");
+            speedCard = PlayerInventory.instance.GetCardAmount("speed");
+
+            CheckGround();
+            MovePlayer();
+            StageMove();
+            Slider();
+            Dash();
+
+            PlayerAnimation.instance.CheckFall(rb.velocity.y);
+
+            if (!isFly)
             {
-                if (isGround)
+                if (Input.GetKeyDown(KeyCode.Space) && canDo)
                 {
-                    rb.velocity = new Vector2(rb.velocity.x, jumpForce);
+                    if (isGround)
+                    {
+                        rb.velocity = new Vector2(rb.velocity.x, jumpForce);
+                    }
+                    else if (jumpCard > 0)
+                    {
+                        rb.velocity = new Vector2(rb.velocity.x, jumpForce);
+                        PlayerInventory.instance.UseCard("jump");
+                    }
+                    PlayerAnimation.instance.JumpAnim(true);
                 }
-                else if (jumpCard > 0)
+            }
+            else
+            {
+                fly_count -= Time.deltaTime;
+                if (fly_count <= 0)
                 {
-                    rb.velocity = new Vector2(rb.velocity.x, jumpForce);
-                    PlayerInventory.instance.UseCard("jump");
+                    fly_count = fly_dur;
+                    isFly = false;
+                    rb.gravityScale = 1f;
                 }
-                PlayerAnimation.instance.JumpAnim(true);
+
+                if (Input.GetKeyDown(KeyCode.Space))
+                {
+                    rb.gravityScale = -1f;
+                }
+                else if (Input.GetKeyUp(KeyCode.Space))
+                {
+                    rb.gravityScale = 1;
+                }
             }
-        }
-        else
-        {
-            fly_count -= Time.deltaTime;
-            if(fly_count <= 0)
+
+            if (Input.GetKeyDown(KeyCode.Alpha2) && dashCard > 0 && canDo)
             {
-                fly_count = fly_dur;
-                isFly = false;
-                rb.gravityScale = 1f;
+                PlayerInventory.instance.UseCard("dash");
+
+                isDash = true;
             }
 
-            if (Input.GetKeyDown(KeyCode.Space))
+            if (Input.GetKeyDown(KeyCode.Alpha4) && flyCard > 0 && canDo && !isSpeed)
             {
-                rb.gravityScale = -1f;
+                PlayerInventory.instance.UseCard("fly");
+
+                isFly = true;
             }
-            else if(Input.GetKeyUp(KeyCode.Space))
+
+            if (Input.GetKeyDown(KeyCode.Alpha1) && speedCard > 0 && !isFly)
             {
-                rb.gravityScale = 1;
+                PlayerInventory.instance.UseCard("speed");
+
+                isSpeed = true;
+            }
+
+            if (stageSpeed == ex_stageSpeed)
+            {
+                PlayerAnimation.instance.RunAnim(true);
+            }
+            else
+            {
+                PlayerAnimation.instance.RunAnim(false);
             }
         }
-
-        if(Input.GetKeyDown(KeyCode.Alpha2) && dashCard > 0 && canDo)
-        {
-            PlayerInventory.instance.UseCard("dash");
-
-            isDash = true;
-        }
-
-        if(Input.GetKeyDown(KeyCode.Alpha4) && flyCard > 0 && canDo && !isSpeed)
-        {
-            PlayerInventory.instance.UseCard("fly");
-
-            isFly = true;   
-        }
-
-        if (Input.GetKeyDown(KeyCode.Alpha1) && speedCard > 0 && !isFly)
-        {
-            PlayerInventory.instance.UseCard("speed");
-
-            isSpeed = true;
-        }
-
-        if (stageSpeed == ex_stageSpeed)
-        {
-            PlayerAnimation.instance.RunAnim(true);
-        }
-        else
-        {
-            PlayerAnimation.instance.RunAnim(false);
-        }
-
     }
     private void StageMove()
     {

@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class PlayerHealth : MonoBehaviour
 {
     public int hp;
-    private int maxHp = 3;
+    private int maxHp = 1;
     public bool isDie;
     [SerializeField] private bool canDamage;
     private float delayTime = 1f;
@@ -15,6 +15,7 @@ public class PlayerHealth : MonoBehaviour
     private int shieldCard;
     private bool isShield;
     [SerializeField] private GameObject shield;
+    private GameManager gameManager;
 
     public static PlayerHealth instance;
     // Start is called before the first frame update
@@ -26,6 +27,8 @@ public class PlayerHealth : MonoBehaviour
         time = delayTime;
         isDie = false;
         isShield = false;
+
+        gameManager = FindAnyObjectByType<GameManager>();
     }
 
     private void Update()
@@ -66,7 +69,7 @@ public class PlayerHealth : MonoBehaviour
             time = 0;
             if(hp <= 0)
             {
-                isDie = true;
+                SetPlayerDie();
             }
         }
         isShield = false;
@@ -98,6 +101,15 @@ public class PlayerHealth : MonoBehaviour
     }
     public void SetPlayerDie()
     {
+        StartCoroutine(PlayerDie());
+    }
+
+    IEnumerator PlayerDie()
+    {
+        Time.timeScale = 0.5f;
+        PlayerAnimation.instance.DieAnim();
         isDie = true;
+        yield return new WaitForSeconds(1.5f);
+        gameManager.GameOver();
     }
 }

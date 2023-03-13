@@ -13,7 +13,8 @@ public class LevelLoader : MonoBehaviour
     }
     public void LoadSameLevel()
     {
-        StartCoroutine(LevelLoad(SceneManager.GetActiveScene().buildIndex));
+        //StartCoroutine(LevelLoad(SceneManager.GetActiveScene().buildIndex));
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
     IEnumerator LevelLoad(int index)

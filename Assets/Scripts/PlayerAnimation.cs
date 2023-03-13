@@ -21,6 +21,10 @@ public class PlayerAnimation : MonoBehaviour
     {
         StartCoroutine(Jump(isJump));
     }
+    public void DieAnim()
+    {
+        playerAnim.SetTrigger("Die");
+    }
     public void CheckFall(float jumpVelocity)
     {
         playerAnim.SetFloat("yVelocity", jumpVelocity);
