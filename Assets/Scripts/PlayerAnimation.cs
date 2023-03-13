@@ -20,15 +20,8 @@ public class PlayerAnimation : MonoBehaviour
 
     public void JumpAnim(bool isJump,bool isSpeed)
     {
-        if(!isSpeed)
-        {
-            StartCoroutine(Jump(isJump));
-        }
-        else
-        {
-            StartCoroutine(SpeedJump(isJump));
-        }
-        
+        StartCoroutine(Jump(isJump));
+
     }
     public void DieAnim()
     {
@@ -44,11 +37,5 @@ public class PlayerAnimation : MonoBehaviour
         playerAnim.SetBool("isJump", isJump);
         yield return new WaitForSeconds(0.1f);
         playerAnim.SetBool("loopJump", isJump);
-    }
-    IEnumerator SpeedJump(bool isJump)
-    {
-        playerAnim.SetBool("isSpeedJump", isJump);
-        yield return new WaitForSeconds(0.1f);
-        playerAnim.SetBool("loopSpeedJump", isJump);
     }
 }
