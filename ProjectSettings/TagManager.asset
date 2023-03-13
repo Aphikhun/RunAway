@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Damageable
   - Shield
+  - Trigger
   layers:
   - Default
   - TransparentFX

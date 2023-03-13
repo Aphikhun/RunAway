@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class PlayerMovement : MonoBehaviour
 {
     private Rigidbody2D rb;
+    private CapsuleCollider2D playerCol;
     [SerializeField] private Transform checkGround;
     [SerializeField] private bool isGround;
 
@@ -20,7 +21,7 @@ public class PlayerMovement : MonoBehaviour
     private float fly_count;
     private float fly_dur = 5f;
     private float dash_dur = 0.2f;
-    private float dash_speed = 12f;
+    private float dash_speed = 5000f;
     private bool isDash;
     private bool isFly;
 
@@ -42,6 +43,7 @@ public class PlayerMovement : MonoBehaviour
     void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+        playerCol= GetComponent<CapsuleCollider2D>();
 
         time = 0;
         stageSpeed = 3f;
@@ -177,10 +179,14 @@ public class PlayerMovement : MonoBehaviour
     {
         if (isDash)
         {
-            rb.velocity = new Vector2(dash_speed, transform.position.y);
+            rb.gravityScale = 0f;
+            playerCol.enabled = false;
+            rb.velocity = Vector2.right * dash_speed * Time.deltaTime;
             time += Time.deltaTime;
             if (time > dash_dur)
             {
+                rb.gravityScale = 1f;
+                playerCol.enabled = true;
                 isDash = false;
                 time = 0;
                 rb.velocity = Vector2.zero;
