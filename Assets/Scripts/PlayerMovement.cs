@@ -20,9 +20,9 @@ public class PlayerMovement : MonoBehaviour
     private float time;
     private float fly_count;
     private float fly_dur = 5f;
-    private float dash_dur = 0.2f;
+    private float dash_dur = 0.15f;
     private float dash_speed = 5000f;
-    private bool isDash;
+    public bool isDash;
     private bool isFly;
 
     private int speedCard;
@@ -180,13 +180,11 @@ public class PlayerMovement : MonoBehaviour
         if (isDash)
         {
             rb.gravityScale = 0f;
-            playerCol.enabled = false;
             rb.velocity = Vector2.right * dash_speed * Time.deltaTime;
             time += Time.deltaTime;
             if (time > dash_dur)
             {
                 rb.gravityScale = 1f;
-                playerCol.enabled = true;
                 isDash = false;
                 time = 0;
                 rb.velocity = Vector2.zero;

@@ -16,6 +16,7 @@ public class PlayerHealth : MonoBehaviour
     private bool isShield;
     [SerializeField] private GameObject shield;
     private GameManager gameManager;
+    private PlayerMovement playerMove;
 
     public static PlayerHealth instance;
     // Start is called before the first frame update
@@ -29,6 +30,7 @@ public class PlayerHealth : MonoBehaviour
         isShield = false;
 
         gameManager = FindAnyObjectByType<GameManager>();
+        playerMove = FindAnyObjectByType<PlayerMovement>();
     }
 
     private void Update()
@@ -80,25 +82,40 @@ public class PlayerHealth : MonoBehaviour
     {
         if(collision.CompareTag("Damageable"))
         {
-            GetDamage();
-            if(!isDie)
+            if (!playerMove.isDash)
             {
-                Destroy(collision.gameObject);
+                GetDamage();
+                if (!isDie)
+                {
+                    Destroy(collision.gameObject);
+                }
             }
+            else
+            {
+                Physics2D.IgnoreCollision(gameObject.GetComponent<CapsuleCollider2D>(), collision);
+            }
+            
         }
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.collider.CompareTag("Damageable"))
         {
-            GetDamage();
-            if (!isDie)
+            if (!playerMove.isDash)
             {
-                Destroy(collision.collider.gameObject);
+                GetDamage();
+                if (!isDie)
+                {
+                    Destroy(collision.collider.gameObject);
+                }
             }
+            else
+            {
+                Physics2D.IgnoreCollision(gameObject.GetComponent<CapsuleCollider2D>(),collision.collider);
+            }
+
         }
     }
-
     private void CanGetDamage()
     {
         if(time < delayTime)
