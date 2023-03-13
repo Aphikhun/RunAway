@@ -9,6 +9,8 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private Transform checkGround;
     [SerializeField] private bool isGround;
 
+    [SerializeField] private ParticleSystem dustEffect;
+
     [SerializeField] private GameObject sliderBar;
     [SerializeField] private Slider slider;
 
@@ -75,10 +77,12 @@ public class PlayerMovement : MonoBehaviour
                 {
                     if (isGround)
                     {
+                        CreateDust();
                         rb.velocity = new Vector2(rb.velocity.x, jumpForce);
                     }
                     else if (jumpCard > 0)
                     {
+                        CreateDust();
                         rb.velocity = new Vector2(rb.velocity.x, jumpForce);
                         PlayerInventory.instance.UseCard("jump");
                     }
@@ -208,5 +212,9 @@ public class PlayerMovement : MonoBehaviour
             sliderBar.SetActive(false);
         }
         
+    }
+    private void CreateDust()
+    {
+        dustEffect.Play();
     }
 }
