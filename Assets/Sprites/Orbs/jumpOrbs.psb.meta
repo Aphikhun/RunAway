@@ -1,0 +1,517 @@
+fileFormatVersion: 2
+guid: ce81d8c6d67b3e7469eb671a3060cba9
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: b2a9591990af98743ba3ff7cf1000886, type: 3}
+  textureImporterSettings:
+    alphaSource: 1
+    mipMapMode: 0
+    enableMipMap: 1
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+    convertToNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    isReadable: 0
+    streamingMipmaps: 1
+    streamingMipmapsPriority: 0
+    vTOnly: 0
+    ignoreMasterTextureLimit: 0
+    nPOTScale: 1
+    sRGBTexture: 1
+    spriteMode: 2
+    spriteExtrude: 1
+    spriteMeshType: 1
+    alignment: 0
+    spritePivot: {x: 0.5, y: 0.5}
+    spritePixelsToUnits: 100
+    spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+    spriteGenerateFallbackPhysicsShape: 0
+    generateCubemap: 6
+    cubemapConvolution: 0
+    seamlessCubemap: 0
+    alphaIsTransparency: 1
+    spriteTessellationDetail: -1
+    textureType: 8
+    textureShape: 1
+    singleChannelComponent: 0
+    flipbookRows: 0
+    flipbookColumns: 0
+    ignorePngGamma: 0
+    cookieMode: 0
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 0
+    wrapV: 0
+    wrapW: 0
+    normalMap: 0
+    textureFormat: 0
+    maxTextureSize: 0
+    lightmap: 0
+    compressionQuality: 0
+    linearTexture: 0
+    grayScaleToAlpha: 0
+    rGBM: 0
+    cubemapConvolutionSteps: 0
+    cubemapConvolutionExponent: 0
+    maxTextureSizeSet: 0
+    compressionQualitySet: 0
+    textureFormatSet: 0
+    applyGammaDecoding: 0
+  spriteImportData:
+  - name: 
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    spriteID: 
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 0, y: 0}
+    spritePosition: {x: 0, y: 0}
+  mosaicSpriteImportData: []
+  rigSpriteImportData:
+  - name: Folder83
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 4
+      width: 633
+      height: 632
+    spriteID: c3153025ee88ff748aa565acd23adeca
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 4, y: 4}
+    spritePosition: {x: 3036, y: 558}
+  - name: Folder82
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 644
+      width: 633
+      height: 632
+    spriteID: c7196f7641a810549ab2c7db466d92e7
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 4, y: 644}
+    spritePosition: {x: 2256, y: 546}
+  - name: Folder81
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 1284
+      width: 633
+      height: 632
+    spriteID: 7e662da402d4c0746b4b1f19fb6acbcb
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 4, y: 1284}
+    spritePosition: {x: 1392, y: 582}
+  - name: Folder80
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 1924
+      width: 633
+      height: 632
+    spriteID: 37fa410bcdb1c3f4a9351e87a8f05125
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 4, y: 1924}
+    spritePosition: {x: 526, y: 558}
+  - name: Folder79
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 2564
+      width: 633
+      height: 632
+    spriteID: 0b5fd6c442358cf459c05af9687bbd92
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 4, y: 2564}
+    spritePosition: {x: 2979, y: 1488}
+  - name: Folder78
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 3204
+      width: 633
+      height: 632
+    spriteID: 08f60ea11c6a32745bc33c7afbbeb915
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 4, y: 3204}
+    spritePosition: {x: 2175, y: 1488}
+  - name: Folder77
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 645
+      y: 4
+      width: 633
+      height: 632
+    spriteID: d5d60bfb83da5cf4fa2fe6afadcd8bfe
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 645, y: 4}
+    spritePosition: {x: 1319, y: 1488}
+  - name: Folder76
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 645
+      y: 644
+      width: 633
+      height: 632
+    spriteID: 7350c17098430ac4a976ead3a9497159
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 645, y: 644}
+    spritePosition: {x: 456, y: 1488}
+  - name: Folder75
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 645
+      y: 1284
+      width: 633
+      height: 632
+    spriteID: 03d229b7ca67d1d48b530e24d7493dcb
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 645, y: 1284}
+    spritePosition: {x: 2868, y: 2322}
+  - name: Folder74
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 645
+      y: 1924
+      width: 633
+      height: 632
+    spriteID: f49af68813c8b6c468ff9ec98ac93010
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 645, y: 1924}
+    spritePosition: {x: 1932, y: 2322}
+  - name: Folder73
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 645
+      y: 2564
+      width: 633
+      height: 632
+    spriteID: c796253accc176f49a2283a0c5ad02d2
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 645, y: 2564}
+    spritePosition: {x: 1110, y: 2322}
+  - name: Folder72
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 645
+      y: 3204
+      width: 632
+      height: 632
+    spriteID: 62519c4161e620e40bdf87866f632c37
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 645, y: 3204}
+    spritePosition: {x: 379, y: 2322}
+  characterData:
+    bones: []
+    parts: []
+    dimension: {x: 0, y: 0}
+    characterGroups: []
+    boneReadOnly: 0
+  sharedRigSpriteImportData: []
+  sharedRigCharacterData:
+    bones: []
+    parts: []
+    dimension: {x: 0, y: 0}
+    characterGroups: []
+    boneReadOnly: 0
+  platformSettings: []
+  mosaicLayers: 1
+  characterMode: 1
+  documentPivot: {x: 0, y: 0}
+  documentAlignment: 7
+  importHiddenLayers: 0
+  layerMappingOption: 2
+  generatePhysicsShape: 0
+  paperDollMode: 0
+  keepDupilcateSpriteName: 1
+  skeletonAssetReferenceID: 
+  spriteCategoryList:
+    categories: []
+  spritePackingTag: 
+  resliceFromLayer: 0
+  mosaicPSDLayers: []
+  rigPSDLayers:
+  - name: Folder83
+    spriteName: Folder83
+    isGroup: 0
+    parentIndex: -1
+    spriteID: c3153025ee88ff748aa565acd23adeca
+    layerID: 13
+    mosaicPosition: {x: 4, y: 4}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Folder82
+    spriteName: Folder82
+    isGroup: 0
+    parentIndex: -1
+    spriteID: c7196f7641a810549ab2c7db466d92e7
+    layerID: 12
+    mosaicPosition: {x: 4, y: 644}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Folder81
+    spriteName: Folder81
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 7e662da402d4c0746b4b1f19fb6acbcb
+    layerID: 11
+    mosaicPosition: {x: 4, y: 1284}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Folder80
+    spriteName: Folder80
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 37fa410bcdb1c3f4a9351e87a8f05125
+    layerID: 10
+    mosaicPosition: {x: 4, y: 1924}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Folder79
+    spriteName: Folder79
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 0b5fd6c442358cf459c05af9687bbd92
+    layerID: 9
+    mosaicPosition: {x: 4, y: 2564}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Folder78
+    spriteName: Folder78
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 08f60ea11c6a32745bc33c7afbbeb915
+    layerID: 8
+    mosaicPosition: {x: 4, y: 3204}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Folder77
+    spriteName: Folder77
+    isGroup: 0
+    parentIndex: -1
+    spriteID: d5d60bfb83da5cf4fa2fe6afadcd8bfe
+    layerID: 7
+    mosaicPosition: {x: 645, y: 4}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Folder76
+    spriteName: Folder76
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 7350c17098430ac4a976ead3a9497159
+    layerID: 6
+    mosaicPosition: {x: 645, y: 644}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Folder75
+    spriteName: Folder75
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 03d229b7ca67d1d48b530e24d7493dcb
+    layerID: 5
+    mosaicPosition: {x: 645, y: 1284}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Folder74
+    spriteName: Folder74
+    isGroup: 0
+    parentIndex: -1
+    spriteID: f49af68813c8b6c468ff9ec98ac93010
+    layerID: 4
+    mosaicPosition: {x: 645, y: 1924}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Folder73
+    spriteName: Folder73
+    isGroup: 0
+    parentIndex: -1
+    spriteID: c796253accc176f49a2283a0c5ad02d2
+    layerID: 3
+    mosaicPosition: {x: 645, y: 2564}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Folder72
+    spriteName: Folder72
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 62519c4161e620e40bdf87866f632c37
+    layerID: 2
+    mosaicPosition: {x: 645, y: 3204}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  sharedRigPSDLayers: []
+  pSDLayerImportSetting: []
+  generateGOHierarchy: 0
+  textureAssetName: 
+  prefabAssetName: 
+  spriteLibAssetName: 
+  skeletonAssetName: 
+  secondarySpriteTextures: []

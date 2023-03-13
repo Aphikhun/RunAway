@@ -20,8 +20,8 @@ public class PlayerMovement : MonoBehaviour
     private float time;
     private float fly_count;
     private float fly_dur = 5f;
-    private float dash_dur = 0.15f;
-    private float dash_speed = 5000f;
+    private float dash_dur = 0.09f;
+    private float dash_speed = 3300f;
     public bool isDash;
     private bool isFly;
 
