@@ -9,7 +9,7 @@ public class DoorTrap : MonoBehaviour
     
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player"))
+        if (collision.CompareTag("Player") && doorRb != null)
         {
             doorRb.gravityScale = 1f;
             Destroy(gameObject);

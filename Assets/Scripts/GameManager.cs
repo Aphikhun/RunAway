@@ -11,13 +11,6 @@ public class GameManager : MonoBehaviour
     private int score;
     private float time;
 
-    private int speedCard;
-    public float stageSpeed;
-    private float ex_stageSpeed;
-    private bool useCard = false;
-    private float duration = 10f;
-    private float speed_time = 0;
-
     [SerializeField] private Text hp_txt = null;
     [SerializeField] private Text score_txt = null;
     [SerializeField] private Text result_txt = null;
@@ -41,8 +34,6 @@ public class GameManager : MonoBehaviour
     {
         score = 0;
         time = 0;
-        stageSpeed = 3f;
-        ex_stageSpeed = 6f;
 
         Time.timeScale = 1;
 
@@ -55,23 +46,12 @@ public class GameManager : MonoBehaviour
         CountScore();
         SetCardAmount();
         PlayerDie();
-        StageMove();
 
         if(hp_txt != null && score_txt != null)
         {
             hp_txt.text = PlayerHealth.instance.hp.ToString();
             score_txt.text = score.ToString();
 
-            speedCard = PlayerInventory.instance.GetCardAmount("speed");
-
-            if (stageSpeed == ex_stageSpeed)
-            {
-                PlayerAnimation.instance.RunAnim(true);
-            }
-            else
-            {
-                PlayerAnimation.instance.RunAnim(false);
-            }
         }
 
         if(Input.GetKeyDown(KeyCode.Escape) && !PlayerHealth.instance.isDie)
@@ -127,33 +107,7 @@ public class GameManager : MonoBehaviour
             }
         }
     }
-    private void StageMove()
-    {
-        if(card_txt.Length > 0)
-        {
-            if (Input.GetKeyDown(KeyCode.Alpha1) && speedCard > 0)
-            {
-                useCard = true;
-                PlayerInventory.instance.UseCard("speed");
-            }
-        }
-
-        if (useCard)
-        {
-            stageSpeed = ex_stageSpeed;
-
-            speed_time += Time.deltaTime;
-            if (speed_time >= duration)
-            {
-                useCard = false;
-                speed_time = 0;
-            }
-        }
-        else
-        {
-            stageSpeed = 3f;
-        }
-    }
+    
     private void PlayerDie()
     {
         if(card_txt.Length > 0)

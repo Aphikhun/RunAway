@@ -6,20 +6,20 @@ public class StageMovement : MonoBehaviour
 {
     private float speed;
 
-    private GameManager gameManager;
+    private PlayerMovement playerMovement;
 
     [SerializeField] private float max_x;
     [SerializeField] private float min_x;
 
     void Awake()
     {
-        gameManager = FindAnyObjectByType<GameManager>();
+        playerMovement = FindAnyObjectByType<PlayerMovement>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        speed = gameManager.stageSpeed;
+        speed = playerMovement.stageSpeed;
 
         MoveScene(speed);
     }

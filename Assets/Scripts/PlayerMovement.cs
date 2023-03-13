@@ -22,6 +22,13 @@ public class PlayerMovement : MonoBehaviour
     private bool isDash;
     private bool isFly;
 
+    private int speedCard;
+    public float stageSpeed;
+    private float ex_stageSpeed;
+    private bool isSpeed = false;
+    private float speed_dur = 10f;
+    private float speed_time = 0;
+
     private int jumpCard;
     private int dashCard;
     private int flyCard;
@@ -35,6 +42,9 @@ public class PlayerMovement : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
 
         time = 0;
+        stageSpeed = 3f;
+        ex_stageSpeed = 6f;
+        speed_time = speed_dur;
         fly_count = fly_dur;
         isDash = false;
         isFly = false;
@@ -47,17 +57,18 @@ public class PlayerMovement : MonoBehaviour
         jumpCard = PlayerInventory.instance.GetCardAmount("jump");
         dashCard = PlayerInventory.instance.GetCardAmount("dash");
         flyCard = PlayerInventory.instance.GetCardAmount("fly");
+        speedCard = PlayerInventory.instance.GetCardAmount("speed");
 
         CheckGround();
         MovePlayer();
+        StageMove();
+        Slider();
         Dash();
 
         PlayerAnimation.instance.CheckFall(rb.velocity.y);
 
         if(!isFly)
         {
-            sliderBar.SetActive(false);
-
             if (Input.GetKeyDown(KeyCode.Space) && canDo)
             {
                 if (isGround)
@@ -74,9 +85,6 @@ public class PlayerMovement : MonoBehaviour
         }
         else
         {
-            sliderBar.SetActive(true);
-            Slider();
-
             fly_count -= Time.deltaTime;
             if(fly_count <= 0)
             {
@@ -102,13 +110,47 @@ public class PlayerMovement : MonoBehaviour
             isDash = true;
         }
 
-        if(Input.GetKeyDown(KeyCode.Alpha4) && flyCard > 0 && canDo)
+        if(Input.GetKeyDown(KeyCode.Alpha4) && flyCard > 0 && canDo && !isSpeed)
         {
             PlayerInventory.instance.UseCard("fly");
 
             isFly = true;   
         }
 
+        if (Input.GetKeyDown(KeyCode.Alpha1) && speedCard > 0 && !isFly)
+        {
+            PlayerInventory.instance.UseCard("speed");
+
+            isSpeed = true;
+        }
+
+        if (stageSpeed == ex_stageSpeed)
+        {
+            PlayerAnimation.instance.RunAnim(true);
+        }
+        else
+        {
+            PlayerAnimation.instance.RunAnim(false);
+        }
+
+    }
+    private void StageMove()
+    {
+        if (isSpeed)
+        {
+            stageSpeed = ex_stageSpeed;
+
+            speed_time -= Time.deltaTime;
+            if (speed_time <= 0)
+            {
+                isSpeed = false;
+                speed_time = speed_dur;
+            }
+        }
+        else
+        {
+            stageSpeed = 3f;
+        }
     }
     private void MovePlayer()
     {
@@ -141,13 +183,28 @@ public class PlayerMovement : MonoBehaviour
     }
     private void CheckGround()
     {
-        isGround = Physics2D.OverlapBox(checkGround.position, new Vector2(1, 1), 0, groundLayer);
+        isGround = Physics2D.OverlapBox(checkGround.position, new Vector2(0.5f, 1), 0, groundLayer);
         PlayerAnimation.instance.JumpAnim(!isGround);
     }
 
     private void Slider()
     {
-        slider.maxValue = fly_dur;
-        slider.value = fly_count;
+        if(isFly)
+        {
+            sliderBar.SetActive(true);
+            slider.maxValue = fly_dur;
+            slider.value = fly_count;
+        }
+        else if(isSpeed)
+        {
+            sliderBar.SetActive(true);
+            slider.maxValue = speed_dur;
+            slider.value = speed_time;
+        }
+        else
+        {
+            sliderBar.SetActive(false);
+        }
+        
     }
 }
