@@ -62,7 +62,7 @@ public class PlayerHealth : MonoBehaviour
 
     public void GetDamage()
     {
-        if (hp > 0 && !isShield)
+        if (hp > 0 && !isShield && canDamage)
         {
             Debug.Log(hp);
             hp -= 1;
@@ -78,7 +78,7 @@ public class PlayerHealth : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.CompareTag("Damageable") && canDamage)
+        if(collision.CompareTag("Damageable"))
         {
             GetDamage();
             if(!isDie)
@@ -87,6 +87,18 @@ public class PlayerHealth : MonoBehaviour
             }
         }
     }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.collider.CompareTag("Damageable"))
+        {
+            GetDamage();
+            if (!isDie)
+            {
+                Destroy(collision.collider.gameObject);
+            }
+        }
+    }
+
     private void CanGetDamage()
     {
         if(time < delayTime)
