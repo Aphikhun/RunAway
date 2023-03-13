@@ -18,10 +18,9 @@ public class PlayerAnimation : MonoBehaviour
         playerAnim.SetBool("isBoost", isRun);
     }
 
-    public void JumpAnim(bool isJump,bool isSpeed)
+    public void JumpAnim(bool isJump)
     {
         StartCoroutine(Jump(isJump));
-
     }
     public void DieAnim()
     {
