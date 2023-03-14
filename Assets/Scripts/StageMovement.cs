@@ -28,13 +28,11 @@ public class StageMovement : MonoBehaviour
     }
     private void MoveScene(float useSpeed)
     {
-        if (transform.position.x > min_x)
+        transform.position = new Vector2(transform.position.x - useSpeed * Time.deltaTime, transform.position.y);
+        
+        if(transform.position.x <= min_x)
         {
-            transform.position = new Vector2(transform.position.x - useSpeed * Time.deltaTime, transform.position.y);
-        }
-        else
-        {
-            transform.position = new Vector3(max_x, transform.position.y, transform.position.z);
+            transform.position = new Vector2(max_x, transform.position.y);
         }
     }
 }
