@@ -49,39 +49,43 @@ public class GameManager : MonoBehaviour
             score_txt.text = "SCORE  " + score.ToString();
         }
 
-        if (!PlayerHealth.instance.isDie) 
+        if(hp_txt != null)
         {
-            CountScore();
-            SetCardAmount();
-
-            if (Input.GetKeyDown(KeyCode.Escape))
+            if (!PlayerHealth.instance.isDie)
             {
-                if (!isPause && !isOption)
-                {
-                    Pause();
-                }
-                else if (isPause && !isOption)
-                {
-                    Continue();
-                }
-                else if (isOption)
-                {
-                    CloseOption();
-                }
-            }
+                CountScore();
+                SetCardAmount();
 
-            if (Input.GetKeyDown(KeyCode.I) && !isPause)
-            {
-                if (isShowInventory)
+                if (Input.GetKeyDown(KeyCode.Escape))
                 {
-                    HideInventory();
+                    if (!isPause && !isOption)
+                    {
+                        Pause();
+                    }
+                    else if (isPause && !isOption)
+                    {
+                        Continue();
+                    }
+                    else if (isOption)
+                    {
+                        CloseOption();
+                    }
                 }
-                else
+
+                if (Input.GetKeyDown(KeyCode.I) && !isPause)
                 {
-                    ShowInventory();
+                    if (isShowInventory)
+                    {
+                        HideInventory();
+                    }
+                    else
+                    {
+                        ShowInventory();
+                    }
                 }
             }
         }
+        
     }
 
     private void CountScore()
