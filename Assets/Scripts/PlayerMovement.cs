@@ -24,8 +24,8 @@ public class PlayerMovement : MonoBehaviour
     private float time;
     private float fly_count;
     private float fly_dur = 5f;
-    private float dash_dur = 0.09f;
-    private float dash_speed = 3300f;
+    private float dash_dur = 0.06f;
+    private float dash_speed = 25f;
     public bool isDash;
     private bool canDash;
     private bool isFly;
@@ -201,7 +201,7 @@ public class PlayerMovement : MonoBehaviour
         if (isDash)
         {
             rb.gravityScale = 0f;
-            rb.velocity = Vector2.right * dash_speed * Time.deltaTime;
+            rb.velocity = Vector2.right * dash_speed;
             time += Time.deltaTime;
             if (time > dash_dur)
             {
