@@ -117,6 +117,7 @@ public class GameManager : MonoBehaviour
     }
     public void CloseOption()
     {
+        isOption = false;
         OptionPanel.SetActive(false);
     }
     public void Pause()
@@ -149,6 +150,7 @@ public class GameManager : MonoBehaviour
     }
     public void Option()
     {
+        isOption = true;
         OptionPanel.SetActive(true);
     }
     private void ShowInventory()
