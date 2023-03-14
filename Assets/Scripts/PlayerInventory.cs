@@ -15,10 +15,10 @@ public class PlayerInventory : MonoBehaviour
         instance = this;
         //Cards.Clear();
         Cards["speed"] = 0;
-        Cards["jump"] = 0;
+        Cards["jump"] = 4;
         Cards["hp"] = 0;
         Cards["fly"] = 0;
-        Cards["dash"] = 5;
+        Cards["dash"] = 0;
         Cards["shield"] = 0;
 
         storage = 0;

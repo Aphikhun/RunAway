@@ -22,6 +22,11 @@ public class PlayerAnimation : MonoBehaviour
     {
         StartCoroutine(Jump(isJump));
     }
+
+    public void JumpSkillAnim(bool isJumpSkill)
+    {
+        playerAnim.SetBool("isJumpSkill", isJumpSkill);
+    }
     public void DieAnim()
     {
         playerAnim.SetTrigger("Die");

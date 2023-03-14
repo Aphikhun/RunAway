@@ -38,6 +38,7 @@ public class PlayerMovement : MonoBehaviour
 
     private float slow_speed = 2f;
     private bool canDo;
+    [SerializeField] private bool isJumpSkill;
 
     // Start is called before the first frame update
     void Awake()
@@ -53,6 +54,7 @@ public class PlayerMovement : MonoBehaviour
         isDash = false;
         isFly = false;
         canDo= true;
+        isJumpSkill = false;
     }
 
     // Update is called once per frame
@@ -72,7 +74,6 @@ public class PlayerMovement : MonoBehaviour
             Dash();
 
             PlayerAnimation.instance.CheckFall(rb.velocity.y);
-
             if (!isFly)
             {
                 if (Input.GetKeyDown(KeyCode.Space) && canDo)
@@ -82,14 +83,18 @@ public class PlayerMovement : MonoBehaviour
                         CreateDust();
                         rb.velocity = new Vector2(rb.velocity.x, jumpForce);
                     }
-                    else if (jumpCard > 0)
+                    else if(jumpCard > 0)
                     {
                         CreateDust();
                         rb.velocity = new Vector2(rb.velocity.x, jumpForce);
                         PlayerInventory.instance.UseCard("jump");
+                        isJumpSkill= true;
+                        //PlayerAnimation.instance.JumpSkillAnim(true);
                     }
                     PlayerAnimation.instance.JumpAnim(true);
+                    PlayerAnimation.instance.JumpSkillAnim(isJumpSkill);
                 }
+                
             }
             else
             {
@@ -195,6 +200,9 @@ public class PlayerMovement : MonoBehaviour
     {
         isGround = Physics2D.OverlapBox(checkGround.position, new Vector2(0.5f, 1), 0, groundLayer);
         PlayerAnimation.instance.JumpAnim(!isGround);
+        isJumpSkill= false;
+        PlayerAnimation.instance.JumpSkillAnim(false);
+
     }
 
     private void Slider()
