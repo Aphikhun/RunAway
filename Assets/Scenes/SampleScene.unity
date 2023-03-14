@@ -5129,12 +5129,12 @@ Transform:
   - {fileID: 1075389360}
   - {fileID: 1867471565}
   - {fileID: 1278376378}
+  - {fileID: 1324066457}
   - {fileID: 1356284596}
   - {fileID: 1276696361}
   - {fileID: 1605604535}
   - {fileID: 1718921989}
   - {fileID: 1993961717}
-  - {fileID: 1324066457}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5305,7 +5305,7 @@ Transform:
   - {fileID: 706416325}
   - {fileID: 1170067885}
   m_Father: {fileID: 1231983318}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1278376376
 GameObject:
@@ -5632,7 +5632,7 @@ GameObject:
   - component: {fileID: 1324066459}
   - component: {fileID: 1324066458}
   m_Layer: 0
-  m_Name: Floor (1)
+  m_Name: Ceiling
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5651,7 +5651,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1231983318}
-  m_RootOrder: 8
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &1324066458
 BoxCollider2D:
@@ -5780,7 +5780,7 @@ GameObject:
   - component: {fileID: 1356284598}
   - component: {fileID: 1356284597}
   m_Layer: 3
-  m_Name: Square
+  m_Name: Platform
   m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5799,7 +5799,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1231983318}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &1356284597
 BoxCollider2D:
@@ -6576,7 +6576,7 @@ Transform:
   - {fileID: 724545895}
   - {fileID: 860365737}
   m_Father: {fileID: 1231983318}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1637102767
 GameObject:
@@ -6961,7 +6961,7 @@ Transform:
   - {fileID: 2101835326}
   - {fileID: 1659247687}
   m_Father: {fileID: 1231983318}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1718921990
 MonoBehaviour:
@@ -7477,7 +7477,7 @@ Transform:
   - {fileID: 1453355362}
   - {fileID: 1074588841}
   m_Father: {fileID: 1231983318}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1999226257
 GameObject:
