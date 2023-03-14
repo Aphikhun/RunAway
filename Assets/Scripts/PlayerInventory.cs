@@ -14,12 +14,12 @@ public class PlayerInventory : MonoBehaviour
     {
         instance = this;
         //Cards.Clear();
-        Cards["speed"] = 0;
-        Cards["jump"] = 4;
-        Cards["hp"] = 0;
-        Cards["fly"] = 0;
-        Cards["dash"] = 0;
-        Cards["shield"] = 0;
+        Cards["speed"] = 10;
+        Cards["jump"] = 10;
+        Cards["hp"] = 10;
+        Cards["fly"] = 10;
+        Cards["dash"] = 10;
+        Cards["shield"] = 10;
 
         storage = 0;
     }
