@@ -46,7 +46,7 @@ public class GameManager : MonoBehaviour
         if (hp_txt != null && score_txt != null)
         {
             hp_txt.text = PlayerHealth.instance.hp.ToString();
-            score_txt.text = score.ToString();
+            score_txt.text = "SCORE  " + score.ToString();
         }
 
         if (!PlayerHealth.instance.isDie) 
@@ -86,7 +86,7 @@ public class GameManager : MonoBehaviour
 
     private void CountScore()
     {
-        if (time < 1)
+        if (time < 0.1)
         {
             time += Time.deltaTime;
         }

@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class PlayerMovement : MonoBehaviour
 {
     private Rigidbody2D rb;
-    private CapsuleCollider2D playerCol;
+
     [SerializeField] private Transform checkGround;
     [SerializeField] private bool isGround;
 
@@ -16,6 +16,10 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private Slider slider;
 
     [SerializeField] private LayerMask groundLayer;
+
+    [SerializeField] private float dash_cd;
+    private float dash_cdCount;
+
     public float jumpForce = 5f;
     private float time;
     private float fly_count;
@@ -23,6 +27,7 @@ public class PlayerMovement : MonoBehaviour
     private float dash_dur = 0.09f;
     private float dash_speed = 3300f;
     public bool isDash;
+    private bool canDash;
     private bool isFly;
 
     private int speedCard;
@@ -44,17 +49,18 @@ public class PlayerMovement : MonoBehaviour
     void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
-        playerCol= GetComponent<CapsuleCollider2D>();
 
         time = 0;
         stageSpeed = 3f;
         ex_stageSpeed = 6f;
+        dash_cdCount = 0;
         speed_time = speed_dur;
         fly_count = fly_dur;
         isDash = false;
         isFly = false;
         canDo= true;
         isJumpSkill = false;
+        canDash = true;
     }
 
     // Update is called once per frame
@@ -101,9 +107,7 @@ public class PlayerMovement : MonoBehaviour
                 fly_count -= Time.deltaTime;
                 if (fly_count <= 0)
                 {
-                    fly_count = fly_dur;
-                    isFly = false;
-                    rb.gravityScale = 1f;
+                    CancelFly();
                 }
 
                 if (Input.GetKeyDown(KeyCode.Space))
@@ -116,23 +120,27 @@ public class PlayerMovement : MonoBehaviour
                 }
             }
 
-            if (Input.GetKeyDown(KeyCode.Alpha2) && dashCard > 0 && canDo)
+            if (Input.GetKeyDown(KeyCode.Alpha2) && dashCard > 0 && canDo && canDash)
             {
                 PlayerInventory.instance.UseCard("dash");
-
+                CancelFly();
+                CancelSpeed();
+                canDash = false;
                 isDash = true;
             }
 
-            if (Input.GetKeyDown(KeyCode.Alpha4) && flyCard > 0 && canDo && !isSpeed)
+            if (Input.GetKeyDown(KeyCode.Alpha4) && flyCard > 0 && canDo)
             {
                 PlayerInventory.instance.UseCard("fly");
+                CancelSpeed();
                 fly_count = fly_dur;
                 isFly = true;
             }
 
-            if (Input.GetKeyDown(KeyCode.Alpha1) && speedCard > 0 && !isFly)
+            if (Input.GetKeyDown(KeyCode.Alpha1) && speedCard > 0)
             {
                 PlayerInventory.instance.UseCard("speed");
+                CancelFly();
                 speed_time = speed_dur;
                 isSpeed = true;
             }
@@ -145,6 +153,15 @@ public class PlayerMovement : MonoBehaviour
             {
                 PlayerAnimation.instance.RunAnim(false);
             }
+            if(!canDash)
+            {
+                dash_cdCount += Time.deltaTime;
+                if(dash_cdCount >= dash_cd)
+                {
+                    canDash = true;
+                    dash_cdCount = 0;
+                }
+            }
         }
     }
     private void StageMove()
@@ -156,8 +173,7 @@ public class PlayerMovement : MonoBehaviour
             speed_time -= Time.deltaTime;
             if (speed_time <= 0)
             {
-                isSpeed = false;
-                speed_time = speed_dur;
+                CancelSpeed();
             }
         }
         else
@@ -224,6 +240,16 @@ public class PlayerMovement : MonoBehaviour
             sliderBar.SetActive(false);
         }
         
+    }
+    private void CancelFly()
+    {
+        isFly = false;
+        rb.gravityScale = 1f;
+    }
+    private void CancelSpeed()
+    {
+        isSpeed = false;
+        speed_time = speed_dur;
     }
     private void CreateDust()
     {

@@ -78,25 +78,6 @@ public class PlayerHealth : MonoBehaviour
         //shield.SetActive(false);
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if(collision.CompareTag("Damageable"))
-        {
-            if (!playerMove.isDash)
-            {
-                GetDamage();
-                if (!isDie)
-                {
-                    Destroy(collision.gameObject);
-                }
-            }
-            else
-            {
-                Physics2D.IgnoreCollision(gameObject.GetComponent<CapsuleCollider2D>(), collision);
-            }
-            
-        }
-    }
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.collider.CompareTag("Damageable"))
