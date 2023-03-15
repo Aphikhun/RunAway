@@ -7,11 +7,13 @@ public class ObstacleMove : MonoBehaviour
     private float speed;
 
     private PlayerMovement playerMovement;
+    private SpawnObstacle spawnObstacle;
 
     [SerializeField] private float destroyPos;
     void Start()
     {
         playerMovement = FindAnyObjectByType<PlayerMovement>();
+        spawnObstacle= FindAnyObjectByType<SpawnObstacle>();
     }
 
     // Update is called once per frame
@@ -31,6 +33,8 @@ public class ObstacleMove : MonoBehaviour
         if (transform.position.x <= destroyPos)
         {
             Destroy(gameObject);
+            spawnObstacle.DecreaseObstacle();
         }
+        
     }
 }
