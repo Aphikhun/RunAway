@@ -20,7 +20,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float dash_cd;
     private float dash_cdCount;
 
-    public float jumpForce = 5f;
+    public float jumpForce = 6f;
     private float time;
     private float fly_count;
     private float fly_dur = 5f;
@@ -34,7 +34,7 @@ public class PlayerMovement : MonoBehaviour
     public float stageSpeed;
     private float ex_stageSpeed;
     private bool isSpeed = false;
-    private float speed_dur = 10f;
+    private float speed_dur = 2f;
     private float speed_time = 0;
 
     private int jumpCard;
@@ -214,7 +214,7 @@ public class PlayerMovement : MonoBehaviour
     }
     private void CheckGround()
     {
-        isGround = Physics2D.OverlapBox(checkGround.position, new Vector2(0.5f, 1), 0, groundLayer);
+        isGround = Physics2D.OverlapBox(checkGround.position, new Vector2(0.2f, 0.3f), 0, groundLayer);
         PlayerAnimation.instance.JumpAnim(!isGround);
         isJumpSkill= false;
         PlayerAnimation.instance.JumpSkillAnim(false);

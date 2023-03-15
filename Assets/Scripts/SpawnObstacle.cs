@@ -15,7 +15,11 @@ public class SpawnObstacle : MonoBehaviour
     
     void Update()
     {
-        if(!PlayerHealth.instance.isDie)
+        
+    }
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Obstacle") && !PlayerHealth.instance.isDie)
         {
             if (num < 3)
             {
