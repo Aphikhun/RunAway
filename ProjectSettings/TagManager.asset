@@ -9,6 +9,7 @@ TagManager:
   - Trigger
   - Ground
   - BreakPoint
+  - SpawnObstacle
   layers:
   - Default
   - TransparentFX
