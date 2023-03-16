@@ -9,6 +9,8 @@ public class ObstacleMove : MonoBehaviour
     private PlayerMovement playerMovement;
     private SpawnObstacle spawnObstacle;
 
+    [SerializeField] private GameObject check;
+
     [SerializeField] private float destroyPos;
     void Start()
     {
@@ -24,6 +26,7 @@ public class ObstacleMove : MonoBehaviour
             speed = playerMovement.stageSpeed;
 
             MoveObstacle(speed);
+            CheckSpawn();
         }
     }
     private void MoveObstacle(float useSpeed)
@@ -33,8 +36,19 @@ public class ObstacleMove : MonoBehaviour
         if (transform.position.x <= destroyPos)
         {
             Destroy(gameObject);
-            spawnObstacle.DecreaseObstacle();
+            //spawnObstacle.DecreaseObstacle();
         }
         
+    }
+    private void CheckSpawn()
+    {
+        if(check!= null)
+        {
+            if (check.transform.position.x <= 0)
+            {
+                Destroy(check.gameObject);
+                spawnObstacle.DecreaseObstacle();
+            }
+        }
     }
 }

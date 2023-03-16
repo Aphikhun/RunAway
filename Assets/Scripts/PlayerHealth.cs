@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class PlayerHealth : MonoBehaviour
 {
     public int hp;
-    private int maxHp = 3;
+    private int maxHp = 1;
     public bool isDie;
     [SerializeField] private bool canDamage;
     private float delayTime = 1f;
@@ -14,6 +14,7 @@ public class PlayerHealth : MonoBehaviour
     private int hpCard;
     private int shieldCard;
     private bool isShield;
+    [SerializeField] private ParticleSystem dieEffect;
     [SerializeField] private GameObject shield;
     private GameManager gameManager;
     private PlayerMovement playerMove;
@@ -119,6 +120,8 @@ public class PlayerHealth : MonoBehaviour
         Time.timeScale = 0.5f;
         PlayerAnimation.instance.DieAnim();
         isDie = true;
+        //yield return new WaitForSeconds(0.1f);
+        //dieEffect.Play();
         yield return new WaitForSeconds(1.5f);
         gameManager.GameOver();
     }

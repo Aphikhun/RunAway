@@ -15,7 +15,7 @@ public class SpawnObstacle : MonoBehaviour
     void Awake()
     {
         num = 0;
-        obstacle = 0;
+        obstacle = 1;
         totalObstacle = 1;
     }
 
