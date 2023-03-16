@@ -42,12 +42,14 @@ public class PlayerHealth : MonoBehaviour
 
         if(Input.GetKeyDown(KeyCode.Alpha5) && hpCard > 0)
         {
+            VFXManager.instance.Play("Heal");
             PlayerInventory.instance.UseCard("hp");
             GetHeal();
         }
 
         if(Input.GetKeyDown(KeyCode.Alpha3) && shieldCard > 0)
         {
+            VFXManager.instance.Play("Shield");
             PlayerInventory.instance.UseCard("shield");
             shield.SetActive(true);
             isShield = true;
@@ -67,9 +69,10 @@ public class PlayerHealth : MonoBehaviour
     {
         if (hp > 0 && !isShield && canDamage)
         {
-            Debug.Log(hp);
+            //Debug.Log(hp);
             hp -= 1;
             time = 0;
+            VFXManager.instance.Play("Hurt");
             if(hp <= 0)
             {
                 SetPlayerDie();
@@ -89,6 +92,7 @@ public class PlayerHealth : MonoBehaviour
                 if (!isDie)
                 {
                     Destroy(collision.collider.gameObject);
+                    VFXManager.instance.Play("Crash");
                 }
             }
             else
@@ -119,6 +123,7 @@ public class PlayerHealth : MonoBehaviour
     {
         Time.timeScale = 0.5f;
         PlayerAnimation.instance.DieAnim();
+        VFXManager.instance.Play("Dead");
         isDie = true;
         //yield return new WaitForSeconds(0.1f);
         //dieEffect.Play();

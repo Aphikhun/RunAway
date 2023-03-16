@@ -121,50 +121,60 @@ public class GameManager : MonoBehaviour
     }
     public void CloseOption()
     {
+        VFXManager.instance.Play("Click");
         isOption = false;
         OptionPanel.SetActive(false);
     }
     public void Pause()
     {
+        VFXManager.instance.Play("Click");
         Time.timeScale = 0f;
         isPause = true;
         PausePanel.SetActive(true);
     }
     public void Continue()
     {
+        VFXManager.instance.Play("Click");
         Time.timeScale = 1f;
         isPause = false;
         PausePanel.SetActive(false);
     }
     public void Play()
     {
+        VFXManager.instance.Play("Click");
         level_loader.LoadNextLevel();
     }
     public void Exit()
     {
+        VFXManager.instance.Play("Click");
         Application.Quit();
     }
     public void PlayAgain()
     {
+        VFXManager.instance.Play("Click");
         level_loader.LoadSameLevel();
     }
     public void MainMenu()
     {
+        VFXManager.instance.Play("Click");
         SceneManager.LoadScene("MainMenu");
     }
     public void Option()
     {
+        VFXManager.instance.Play("Click");
         isOption = true;
         OptionPanel.SetActive(true);
     }
     private void ShowInventory()
     {
-        isShowInventory= true;
+        VFXManager.instance.Play("Click");
+        isShowInventory = true;
         InventoryPanel.SetActive(true);
     }
     private void HideInventory()
     {
-        isShowInventory= false;
+        VFXManager.instance.Play("Click");
+        isShowInventory = false;
         InventoryPanel.SetActive(false);
     }
 }

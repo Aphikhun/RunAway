@@ -8,6 +8,7 @@ public class Shield : MonoBehaviour
     {
         if (collision.CompareTag("Damageable"))
         {
+            VFXManager.instance.Play("Crash");
             Destroy(collision.gameObject);
             gameObject.SetActive(false);
         }

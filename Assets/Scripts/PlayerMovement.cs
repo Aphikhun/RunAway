@@ -92,6 +92,7 @@ public class PlayerMovement : MonoBehaviour
                     else if(jumpCard > 0)
                     {
                         CreateDust();
+
                         rb.velocity = new Vector2(rb.velocity.x, jumpForce);
                         PlayerInventory.instance.UseCard("jump");
                         isJumpSkill= true;
@@ -99,6 +100,7 @@ public class PlayerMovement : MonoBehaviour
                     }
                     PlayerAnimation.instance.JumpAnim(true);
                     PlayerAnimation.instance.JumpSkillAnim(isJumpSkill);
+                    VFXManager.instance.Play("Move");
                 }
                 
             }
@@ -123,6 +125,7 @@ public class PlayerMovement : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Alpha2) && dashCard > 0 && canDo && canDash)
             {
                 PlayerInventory.instance.UseCard("dash");
+                VFXManager.instance.Play("Move");
                 CancelFly();
                 CancelSpeed();
                 canDash = false;
@@ -140,6 +143,7 @@ public class PlayerMovement : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Alpha1) && speedCard > 0)
             {
                 PlayerInventory.instance.UseCard("speed");
+                VFXManager.instance.Play("Move");
                 CancelFly();
                 speed_time = speed_dur;
                 isSpeed = true;
@@ -218,7 +222,6 @@ public class PlayerMovement : MonoBehaviour
         PlayerAnimation.instance.JumpAnim(!isGround);
         isJumpSkill= false;
         PlayerAnimation.instance.JumpSkillAnim(false);
-
     }
 
     private void Slider()

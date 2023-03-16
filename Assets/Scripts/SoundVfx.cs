@@ -1,18 +1,14 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 
-public class SoundVfx : MonoBehaviour
+[System.Serializable]
+public class SoundVfx
 {
-    private AudioSource audioSource;
-    void Start()
-    {
-        audioSource= GetComponent<AudioSource>();
-    }
+    public string name;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public AudioClip audioClip;
+    public AudioMixerGroup audioMixer;
+
+    [HideInInspector]
+    public AudioSource audioSource;
 }
