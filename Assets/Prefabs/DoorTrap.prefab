@@ -13,8 +13,8 @@ GameObject:
   - component: {fileID: 3083773689642546103}
   - component: {fileID: 3083773689642546097}
   m_Layer: 0
-  m_Name: Door
-  m_TagString: Damageable
+  m_Name: Wall
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

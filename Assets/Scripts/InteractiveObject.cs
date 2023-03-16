@@ -6,6 +6,7 @@ public class InteractiveObject : MonoBehaviour
 {
     private int random;
     [SerializeField] private int loop;
+    [SerializeField] private GameObject effect;
 
     private void RandomItem()
     {
@@ -38,6 +39,7 @@ public class InteractiveObject : MonoBehaviour
                 RandomItem();
             }
             VFXManager.instance.Play("PickUp");
+               
             Destroy(gameObject);
         }
     }

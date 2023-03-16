@@ -13,6 +13,10 @@ TagManager:
   - Obstacle
   - FxTemporaire
   - DamageNoDestroy
+  - Box
+  - Door
+  - Wall
+  - Rock
   layers:
   - Default
   - TransparentFX

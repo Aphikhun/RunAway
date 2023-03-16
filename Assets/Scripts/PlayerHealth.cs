@@ -16,7 +16,9 @@ public class PlayerHealth : MonoBehaviour
     private int shieldCard;
     private bool isShield;
     [SerializeField] private SpriteRenderer sr;
-    [SerializeField] private ParticleSystem dieEffect;
+    [SerializeField] private GameObject boxEffect;
+    [SerializeField] private GameObject doorEffect;
+    [SerializeField] private GameObject wallEffect;
     [SerializeField] private GameObject shield;
     private GameManager gameManager;
     private PlayerMovement playerMove;
@@ -96,11 +98,16 @@ public class PlayerHealth : MonoBehaviour
                 Physics2D.IgnoreCollision(gameObject.GetComponent<CapsuleCollider2D>(), collision);
             }
         }
+        else if(collision.CompareTag("Box"))
+        {
+            Instantiate(boxEffect, collision.transform.position, collision.transform.rotation);
+            StartCoroutine(DestroyEffect(collision));
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.collider.CompareTag("Damageable"))
+        if (collision.collider.CompareTag("Wall"))
         {
             if (!playerMove.isDash)
             {
@@ -108,14 +115,30 @@ public class PlayerHealth : MonoBehaviour
                 if (!isDie)
                 {
                     Destroy(collision.collider.gameObject);
+                    Instantiate(wallEffect, collision.transform.position, collision.transform.rotation);
                     VFXManager.instance.Play("Crash");
+                    StartCoroutine(DestroyEffect(collision.collider));
                 }
             }
             else
             {
                 Physics2D.IgnoreCollision(gameObject.GetComponent<CapsuleCollider2D>(),collision.collider);
             }
-
+        }
+        else if (collision.collider.CompareTag("Door"))
+        {
+            GetDamage();
+            if (!isDie)
+            {
+                Destroy(collision.collider.gameObject);
+                Instantiate(doorEffect, collision.transform.position, collision.transform.rotation);
+                VFXManager.instance.Play("Crash");
+                StartCoroutine(DestroyEffect(collision.collider));
+            }
+            else
+            {
+                Physics2D.IgnoreCollision(gameObject.GetComponent<CapsuleCollider2D>(), collision.collider);
+            }
         }
     }
     private void CanGetDamage()
@@ -139,13 +162,19 @@ public class PlayerHealth : MonoBehaviour
         Color color = sr.color;
         color.a = 0.5f;
         sr.color= color;
-        yield return new WaitForSeconds(0.3f);
+        yield return new WaitForSeconds(0.2f);
         color.a = 1f;
         sr.color = color;
-        yield return new WaitForSeconds(0.4f);
+        yield return new WaitForSeconds(0.2f);
         color.a = 0.5f;
         sr.color = color;
-        yield return new WaitForSeconds(0.3f);
+        yield return new WaitForSeconds(0.2f);
+        color.a = 1f;
+        sr.color = color;
+        yield return new WaitForSeconds(0.2f);
+        color.a = 0.5f;
+        sr.color = color;
+        yield return new WaitForSeconds(0.2f);
         color.a = 1f;
         sr.color = color;
     }
@@ -160,5 +189,11 @@ public class PlayerHealth : MonoBehaviour
         //dieEffect.Play();
         yield return new WaitForSeconds(1.5f);
         gameManager.GameOver();
+    }
+
+    IEnumerator DestroyEffect(Collider2D col)
+    {
+        yield return new WaitForSeconds(1);
+        Destroy(col.gameObject);
     }
 }

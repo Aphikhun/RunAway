@@ -222,6 +222,10 @@ public class PlayerMovement : MonoBehaviour
         PlayerAnimation.instance.JumpAnim(!isGround);
         isJumpSkill= false;
         PlayerAnimation.instance.JumpSkillAnim(false);
+        if (isGround)
+        {
+            VFXManager.instance.Play("Land");
+        }
     }
 
     private void Slider()
