@@ -143,7 +143,7 @@ public class PlayerMovement : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Alpha1) && speedCard > 0)
             {
                 PlayerInventory.instance.UseCard("speed");
-                VFXManager.instance.Play("Move");
+                VFXManager.instance.Play("Speed");
                 CancelFly();
                 speed_time = speed_dur;
                 isSpeed = true;
