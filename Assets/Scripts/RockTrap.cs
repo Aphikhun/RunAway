@@ -10,7 +10,8 @@ public class RockTrap : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            Instantiate(rockPrefab,pos);
+            VFXManager.instance.Play("Click");
+            Instantiate(rockPrefab, pos);
             Destroy(gameObject);
         }
     }

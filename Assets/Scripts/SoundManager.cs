@@ -24,7 +24,13 @@ public class SoundManager : MonoBehaviour
         vfxMixer.GetFloat("vfxVolume", out vfxValue);
         vfxSlider.value = vfxValue;
     }
-
+    private void Update()
+    {
+        if(PlayerHealth.instance.isDie)
+        {
+            audioSource.Stop();
+        }
+    }
     public void SetMasterVolume()
     {
         masterMixer.SetFloat("masterVolume",masterSlider.value);
