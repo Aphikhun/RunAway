@@ -11,6 +11,8 @@ TagManager:
   - BreakPoint
   - SpawnObstacle
   - Obstacle
+  - FxTemporaire
+  - DamageNoDestroy
   layers:
   - Default
   - TransparentFX

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -14,6 +15,7 @@ public class PlayerHealth : MonoBehaviour
     private int hpCard;
     private int shieldCard;
     private bool isShield;
+    [SerializeField] private SpriteRenderer sr;
     [SerializeField] private ParticleSystem dieEffect;
     [SerializeField] private GameObject shield;
     private GameManager gameManager;
@@ -29,7 +31,7 @@ public class PlayerHealth : MonoBehaviour
         time = delayTime;
         isDie = false;
         isShield = false;
-
+        
         gameManager = FindAnyObjectByType<GameManager>();
         playerMove = FindAnyObjectByType<PlayerMovement>();
     }
@@ -72,7 +74,6 @@ public class PlayerHealth : MonoBehaviour
             //Debug.Log(hp);
             hp -= 1;
             time = 0;
-            
             if(hp <= 0)
             {
                 SetPlayerDie();
@@ -80,6 +81,20 @@ public class PlayerHealth : MonoBehaviour
         }
         isShield = false;
         //shield.SetActive(false);
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("DamageNoDestroy"))
+        {
+            if (!playerMove.isDash)
+            {
+                GetDamage();
+            }
+            else
+            {
+                Physics2D.IgnoreCollision(gameObject.GetComponent<CapsuleCollider2D>(), collision);
+            }
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
