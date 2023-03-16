@@ -74,6 +74,7 @@ public class PlayerHealth : MonoBehaviour
             //Debug.Log(hp);
             hp -= 1;
             time = 0;
+            StartCoroutine(PlayerHurt());
             if(hp <= 0)
             {
                 SetPlayerDie();
@@ -132,6 +133,21 @@ public class PlayerHealth : MonoBehaviour
     public void SetPlayerDie()
     {
         StartCoroutine(PlayerDie());
+    }
+    IEnumerator PlayerHurt()
+    {
+        Color color = sr.color;
+        color.a = 0.5f;
+        sr.color= color;
+        yield return new WaitForSeconds(0.3f);
+        color.a = 1f;
+        sr.color = color;
+        yield return new WaitForSeconds(0.4f);
+        color.a = 0.5f;
+        sr.color = color;
+        yield return new WaitForSeconds(0.3f);
+        color.a = 1f;
+        sr.color = color;
     }
 
     IEnumerator PlayerDie()
