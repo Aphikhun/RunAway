@@ -13,6 +13,8 @@ public class SoundManager : MonoBehaviour
     [SerializeField] private Slider masterSlider;
     [SerializeField] private Slider vfxSlider;
 
+    private PlayerHealth playerHealth;
+
     private float masterValue;
     private float vfxValue;
     // Start is called before the first frame update
@@ -23,10 +25,12 @@ public class SoundManager : MonoBehaviour
 
         vfxMixer.GetFloat("vfxVolume", out vfxValue);
         vfxSlider.value = vfxValue;
+
+        playerHealth = FindAnyObjectByType<PlayerHealth>();
     }
     private void Update()
     {
-        if(PlayerHealth.instance.isDie)
+        if(playerHealth.isDie)
         {
             audioSource.Stop();
         }

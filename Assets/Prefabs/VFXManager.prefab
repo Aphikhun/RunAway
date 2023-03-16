@@ -25,7 +25,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1733793707405590999}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -4, y: -3.02, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -159,7 +159,7 @@ MonoBehaviour:
     audioMixer: {fileID: 24300002, guid: 9159873ee5ba5b740b3713d68627a5ce, type: 2}
     audioSource: {fileID: 0}
   - name: Crash
-    audioClip: {fileID: 8300000, guid: 0dc0b6d7652abf24cbc6583079fcb2a5, type: 3}
+    audioClip: {fileID: 8300000, guid: 01eea4e8b0279514ab047f643151ae17, type: 3}
     audioMixer: {fileID: 24300002, guid: 9159873ee5ba5b740b3713d68627a5ce, type: 2}
     audioSource: {fileID: 0}
   - name: Click
@@ -172,5 +172,9 @@ MonoBehaviour:
     audioSource: {fileID: 0}
   - name: Speed
     audioClip: {fileID: 8300000, guid: ff73f58f510fd474bb28f7d2ca9183b5, type: 3}
+    audioMixer: {fileID: 24300002, guid: 9159873ee5ba5b740b3713d68627a5ce, type: 2}
+    audioSource: {fileID: 0}
+  - name: PickUp
+    audioClip: {fileID: 8300000, guid: b3cb69d6c25ffd444a2046ec7946774b, type: 3}
     audioMixer: {fileID: 24300002, guid: 9159873ee5ba5b740b3713d68627a5ce, type: 2}
     audioSource: {fileID: 0}
