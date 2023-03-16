@@ -11,6 +11,7 @@ public class DoorTrap : MonoBehaviour
     {
         if (collision.CompareTag("Player") && doorRb != null)
         {
+            VFXManager.instance.Play("Click");
             doorRb.gravityScale = 1f;
             Destroy(gameObject);
         }

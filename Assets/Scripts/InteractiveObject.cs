@@ -37,7 +37,7 @@ public class InteractiveObject : MonoBehaviour
             {
                 RandomItem();
             }
-            
+            VFXManager.instance.Play("PickUp");
             Destroy(gameObject);
         }
     }

@@ -118,6 +118,10 @@ public class PlayerHealth : MonoBehaviour
     {
         StartCoroutine(PlayerDie());
     }
+    IEnumerator PlayerHurt()
+    {
+        yield return new WaitForSeconds(0.5f);
+    }
 
     IEnumerator PlayerDie()
     {

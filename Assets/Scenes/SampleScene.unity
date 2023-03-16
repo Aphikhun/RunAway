@@ -6362,6 +6362,30 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1733793707405590996, guid: ad88ab1906f30024daf08bf52771e666, type: 3}
+      propertyPath: vfxs.Array.size
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 1733793707405590996, guid: ad88ab1906f30024daf08bf52771e666, type: 3}
+      propertyPath: vfxs.Array.data[8].name
+      value: PickUp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1733793707405590996, guid: ad88ab1906f30024daf08bf52771e666, type: 3}
+      propertyPath: vfxs.Array.data[3].audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: fa8e11c393c1caf43b7d9981f32708fc, type: 3}
+    - target: {fileID: 1733793707405590996, guid: ad88ab1906f30024daf08bf52771e666, type: 3}
+      propertyPath: vfxs.Array.data[4].audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 216f83d525c1dd44a928d9b6869497b6, type: 3}
+    - target: {fileID: 1733793707405590996, guid: ad88ab1906f30024daf08bf52771e666, type: 3}
+      propertyPath: vfxs.Array.data[8].audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 860b06b882455d74e9de4a8a383234d0, type: 3}
+    - target: {fileID: 1733793707405590996, guid: ad88ab1906f30024daf08bf52771e666, type: 3}
+      propertyPath: vfxs.Array.data[8].audioMixer
+      value: 
+      objectReference: {fileID: 24300002, guid: 9159873ee5ba5b740b3713d68627a5ce, type: 2}
     - target: {fileID: 1733793707405590999, guid: ad88ab1906f30024daf08bf52771e666, type: 3}
       propertyPath: m_Name
       value: VFXManager
