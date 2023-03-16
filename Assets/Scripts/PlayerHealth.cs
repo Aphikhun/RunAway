@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class PlayerHealth : MonoBehaviour
 {
     public int hp;
-    private int maxHp = 1;
+    private int maxHp = 3;
     public bool isDie;
     [SerializeField] private bool canDamage;
     private float delayTime = 1f;
@@ -72,7 +72,7 @@ public class PlayerHealth : MonoBehaviour
             //Debug.Log(hp);
             hp -= 1;
             time = 0;
-            VFXManager.instance.Play("Hurt");
+            
             if(hp <= 0)
             {
                 SetPlayerDie();
