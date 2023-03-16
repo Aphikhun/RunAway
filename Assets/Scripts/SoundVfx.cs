@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class SoundVfx : MonoBehaviour
 {
-    // Start is called before the first frame update
+    private AudioSource audioSource;
     void Start()
     {
-        
+        audioSource= GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
