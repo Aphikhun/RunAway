@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class PlayerHealth : MonoBehaviour
 {
     public int hp;
-    private int maxHp = 3;
+    private int maxHp = 100;
     public bool isDie;
     [SerializeField] private bool canDamage;
     private float delayTime = 1f;
