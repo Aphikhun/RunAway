@@ -100,8 +100,8 @@ public class PlayerHealth : MonoBehaviour
         }
         else if(collision.CompareTag("Box"))
         {
-            Instantiate(boxEffect, collision.transform.position, collision.transform.rotation);
-            StartCoroutine(DestroyEffect(collision));
+            GameObject boxObj = Instantiate(boxEffect, collision.transform.position, collision.transform.rotation);
+            StartCoroutine(DestroyEffect(boxObj));
         }
     }
 
@@ -115,9 +115,9 @@ public class PlayerHealth : MonoBehaviour
                 if (!isDie)
                 {
                     Destroy(collision.collider.gameObject);
-                    Instantiate(wallEffect, collision.transform.position, collision.transform.rotation);
+                    GameObject wallObj = Instantiate(wallEffect, collision.transform.position, collision.transform.rotation);
                     VFXManager.instance.Play("Crash");
-                    StartCoroutine(DestroyEffect(collision.collider));
+                    StartCoroutine(DestroyEffect(wallObj));
                 }
             }
             else
@@ -131,9 +131,9 @@ public class PlayerHealth : MonoBehaviour
             if (!isDie)
             {
                 Destroy(collision.collider.gameObject);
-                Instantiate(doorEffect, collision.transform.position, collision.transform.rotation);
+                GameObject doorObj = Instantiate(doorEffect, collision.transform.position, collision.transform.rotation);
                 VFXManager.instance.Play("Crash");
-                StartCoroutine(DestroyEffect(collision.collider));
+                StartCoroutine(DestroyEffect(doorObj));
             }
             else
             {
@@ -191,9 +191,12 @@ public class PlayerHealth : MonoBehaviour
         gameManager.GameOver();
     }
 
-    IEnumerator DestroyEffect(Collider2D col)
+    IEnumerator DestroyEffect(GameObject obj)
     {
         yield return new WaitForSeconds(1);
-        Destroy(col.gameObject);
+        if(obj != null)
+        {
+            Destroy(obj);
+        }
     }
 }
