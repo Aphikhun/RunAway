@@ -98,6 +98,24 @@ public class PlayerHealth : MonoBehaviour
                 Physics2D.IgnoreCollision(gameObject.GetComponent<CapsuleCollider2D>(), collision);
             }
         }
+        else if (collision.CompareTag("Rock"))
+        {
+            if (!playerMove.isDash)
+            {
+                GetDamage();
+                if (!isDie)
+                {
+                    Destroy(collision.gameObject);
+                    GameObject rockObj = Instantiate(wallEffect, collision.transform.position, collision.transform.rotation);
+                    VFXManager.instance.Play("Crash");
+                    StartCoroutine(DestroyEffect(rockObj));
+                }
+            }
+            else
+            {
+                Physics2D.IgnoreCollision(gameObject.GetComponent<CapsuleCollider2D>(), collision);
+            }
+        }
         else if(collision.CompareTag("Box"))
         {
             GameObject boxObj = Instantiate(boxEffect, collision.transform.position, collision.transform.rotation);
