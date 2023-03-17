@@ -27,8 +27,8 @@ public class InteractiveObject : MonoBehaviour
         {
             random = Random.Range(4, 7);
         }
-
         PlayerInventory.instance.GetCard(random);
+
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {

@@ -114,11 +114,11 @@ public class PlayerMovement : MonoBehaviour
 
                 if (Input.GetKeyDown(KeyCode.Space))
                 {
-                    rb.gravityScale = -1f;
+                    rb.gravityScale = -2f;
                 }
                 else if (Input.GetKeyUp(KeyCode.Space))
                 {
-                    rb.gravityScale = 1;
+                    rb.gravityScale = 2;
                 }
             }
 

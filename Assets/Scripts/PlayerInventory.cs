@@ -13,7 +13,7 @@ public class PlayerInventory : MonoBehaviour
     void Awake()
     {
         instance = this;
-        //Cards.Clear();
+        Cards.Clear();
         Cards["speed"] = 0;
         Cards["jump"] = 0;
         Cards["hp"] = 0;
@@ -34,27 +34,27 @@ public class PlayerInventory : MonoBehaviour
             switch(random)
             {
                 case 1:
-                    Cards["speed"] += 1;
+                    Cards["speed"]++;
                     Debug.Log("Get Speed Card");
                     break;
                 case 2:
-                    Cards["jump"] += 1;
+                    Cards["jump"]++;
                     Debug.Log("Get Jump Card");
                     break; 
                 case 3:
-                    Cards["hp"] += 1;
+                    Cards["hp"]++;
                     Debug.Log("Get Hp Card");
                     break;
                 case 4:
-                    Cards["fly"] += 1;
+                    Cards["fly"]++;
                     Debug.Log("Get Fly Card");
                     break;
                 case 5:
-                    Cards["dash"] += 1;
+                    Cards["dash"]++;
                     Debug.Log("Get Dash Card");
                     break;
                 case 6:
-                    Cards["shield"] += 1;
+                    Cards["shield"]++;
                     Debug.Log("Get Sheild Card");
                     break;
                 default:
@@ -62,13 +62,17 @@ public class PlayerInventory : MonoBehaviour
                     break;
             }
         }
-        /*
+        else
+        {
+            Debug.Log("Max");
+        }
+        
         storage = 0;
         foreach (var card in Cards)
         {
             storage += card.Value;
         }
-       */
+       
     }
 
     public int GetCardAmount(string cardName)
@@ -78,7 +82,7 @@ public class PlayerInventory : MonoBehaviour
 
     public void UseCard(string cardName)
     {
-        Cards[cardName] -= 1;
+        Cards[cardName]--;
         //storage--;
     }
 }

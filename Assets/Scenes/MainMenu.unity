@@ -230,6 +230,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hp_txt: {fileID: 0}
   score_txt: {fileID: 0}
+  storage_txt: {fileID: 0}
   result_txt: {fileID: 0}
   PausePanel: {fileID: 0}
   InventoryPanel: {fileID: 0}
@@ -1375,7 +1376,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 24300002, guid: 8c9303d4befa53d4b8eb277f28021467, type: 2}
   m_audioClip: {fileID: 8300000, guid: c776cf100ce21544a989e76484467aa8, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.8
   m_Pitch: 1
   Loop: 1
   Mute: 0
