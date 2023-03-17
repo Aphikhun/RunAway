@@ -54,7 +54,7 @@ public class PlayerHealth : MonoBehaviour
 
         if(Input.GetKeyDown(KeyCode.Alpha3) && shieldCard > 0)
         {
-            VFXManager.instance.Play("Shield");
+            //VFXManager.instance.Play("Shield");
             PlayerInventory.instance.UseCard("shield");
             shield.SetActive(true);
             isShield = true;

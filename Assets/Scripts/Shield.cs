@@ -6,7 +6,7 @@ public class Shield : MonoBehaviour
 {
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Damageable"))
+        if (collision.CompareTag("Door") || collision.CompareTag("DamageNoDestroy") || collision.CompareTag("Wall") || collision.CompareTag("Rock"))
         {
             VFXManager.instance.Play("Crash");
             Destroy(collision.gameObject);
