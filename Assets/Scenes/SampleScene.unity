@@ -695,7 +695,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hp_txt: {fileID: 1282890788}
   score_txt: {fileID: 1756469220}
-  storage_txt: {fileID: 0}
+  storage_txt: {fileID: 2064540005}
   result_txt: {fileID: 1094154977}
   PausePanel: {fileID: 964245719}
   InventoryPanel: {fileID: 1298563656}
