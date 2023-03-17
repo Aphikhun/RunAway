@@ -21,7 +21,10 @@ public class PlayerInventory : MonoBehaviour
         Cards["dash"] = 0;
         Cards["shield"] = 0;
 
-        storage = Cards["speed"]+ Cards["jump"]+ Cards["hp"]+ Cards["fly"]+ Cards["dash"]+ Cards["shield"];
+    }
+    private void Update()
+    {
+        storage = Cards["speed"] + Cards["jump"] + Cards["hp"] + Cards["fly"] + Cards["dash"] + Cards["shield"];
     }
 
     public void GetCard(int random)
