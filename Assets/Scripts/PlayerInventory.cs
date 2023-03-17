@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerInventory : MonoBehaviour
 {
     public Dictionary<string,int> Cards = new();
-    private int maxStorage = 5;
+    private int maxStorage = 15;
     private int storage = 0;
 
     public static PlayerInventory instance;
@@ -14,12 +14,12 @@ public class PlayerInventory : MonoBehaviour
     {
         instance = this;
         //Cards.Clear();
-        Cards["speed"] = 10;
-        Cards["jump"] = 10;
-        Cards["hp"] = 10;
-        Cards["fly"] = 10;
-        Cards["dash"] = 10;
-        Cards["shield"] = 10;
+        Cards["speed"] = 0;
+        Cards["jump"] = 0;
+        Cards["hp"] = 0;
+        Cards["fly"] = 0;
+        Cards["dash"] = 0;
+        Cards["shield"] = 0;
 
         storage = 0;
     }

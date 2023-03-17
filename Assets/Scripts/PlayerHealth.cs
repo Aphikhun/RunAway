@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class PlayerHealth : MonoBehaviour
 {
     public int hp;
-    private int maxHp = 10;
+    private int maxHp = 100;
     public bool isDie;
     [SerializeField] private bool canDamage;
     private float delayTime = 1f;
@@ -146,13 +146,16 @@ public class PlayerHealth : MonoBehaviour
         }
         else if (collision.collider.CompareTag("Door"))
         {
-            GetDamage();
-            if (!isDie)
+            if (!playerMove.isDash)
             {
-                Destroy(collision.collider.gameObject);
-                GameObject doorObj = Instantiate(doorEffect, collision.transform.position, collision.transform.rotation);
-                VFXManager.instance.Play("Crash");
-                StartCoroutine(DestroyEffect(doorObj));
+                GetDamage();
+                if (!isDie)
+                {
+                    Destroy(collision.collider.gameObject);
+                    GameObject doorObj = Instantiate(doorEffect, collision.transform.position, collision.transform.rotation);
+                    VFXManager.instance.Play("Crash");
+                    StartCoroutine(DestroyEffect(doorObj));
+                }
             }
             else
             {

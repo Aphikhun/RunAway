@@ -24,6 +24,9 @@ public class GameManager : MonoBehaviour
     private bool isOption = false;
     [SerializeField] private GameObject OptionPanel = null;
 
+    private bool isHelp = false;
+    [SerializeField] private GameObject HelpPanel = null;
+
     [SerializeField] private Text[] card_txt = null;
 
     private LevelLoader level_loader;
@@ -60,13 +63,14 @@ public class GameManager : MonoBehaviour
                     {
                         Pause();
                     }
-                    else if (isPause && !isOption)
+                    else if (isPause && !isOption && !isHelp)
                     {
                         Continue();
                     }
-                    else if (isOption)
+                    else if (isOption || isHelp)
                     {
                         CloseOption();
+                        HideHelp();
                     }
                 }
 
@@ -136,6 +140,18 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 1f;
         isPause = false;
         PausePanel.SetActive(false);
+    }
+    public void ShowHelp()
+    {
+        VFXManager.instance.Play("Click");
+        isHelp = true;
+        HelpPanel.SetActive(true);
+    }
+    public void HideHelp()
+    {
+        VFXManager.instance.Play("Click");
+        isHelp = false;
+        HelpPanel.SetActive(false);
     }
     public void Play()
     {

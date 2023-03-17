@@ -10,7 +10,7 @@ public class KillPlayer : MonoBehaviour
         {
             PlayerHealth.instance.SetPlayerDie();
         }
-        else if(collision.CompareTag("Damageable"))
+        else if(collision.CompareTag("Rock"))
         {
             Destroy(collision.gameObject);
         }
