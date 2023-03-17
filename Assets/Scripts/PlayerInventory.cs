@@ -21,7 +21,7 @@ public class PlayerInventory : MonoBehaviour
         Cards["dash"] = 0;
         Cards["shield"] = 0;
 
-        storage = 0;
+        storage = Cards["speed"]+ Cards["jump"]+ Cards["hp"]+ Cards["fly"]+ Cards["dash"]+ Cards["shield"];
     }
 
     public void GetCard(int random)
@@ -65,8 +65,7 @@ public class PlayerInventory : MonoBehaviour
         {
             storage += card.Value;
         }
-        */
-        storage++;
+       */
     }
 
     public int GetCardAmount(string cardName)
@@ -77,6 +76,6 @@ public class PlayerInventory : MonoBehaviour
     public void UseCard(string cardName)
     {
         Cards[cardName] -= 1;
-        storage--;
+        //storage--;
     }
 }
