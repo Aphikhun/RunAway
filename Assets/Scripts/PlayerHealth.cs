@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class PlayerHealth : MonoBehaviour
 {
     public int hp;
-    private int maxHp = 100;
+    private int maxHp = 10;
     public bool isDie;
     [SerializeField] private bool canDamage;
     private float delayTime = 1f;
@@ -19,6 +19,7 @@ public class PlayerHealth : MonoBehaviour
     [SerializeField] private GameObject boxEffect;
     [SerializeField] private GameObject doorEffect;
     [SerializeField] private GameObject wallEffect;
+    [SerializeField] private GameObject rockEffect;
     [SerializeField] private GameObject shield;
     private GameManager gameManager;
     private PlayerMovement playerMove;
@@ -106,7 +107,7 @@ public class PlayerHealth : MonoBehaviour
                 if (!isDie)
                 {
                     Destroy(collision.gameObject);
-                    GameObject rockObj = Instantiate(wallEffect, collision.transform.position, collision.transform.rotation);
+                    GameObject rockObj = Instantiate(rockEffect, collision.transform.position, collision.transform.rotation);
                     VFXManager.instance.Play("Crash");
                     StartCoroutine(DestroyEffect(rockObj));
                 }

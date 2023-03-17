@@ -3259,7 +3259,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &899478804
 Transform:
   m_ObjectHideFlags: 0
@@ -6952,6 +6952,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7255641860854552786, guid: 58aa51b01f775ab4ba18d9aa059624bf, type: 3}
+      propertyPath: rockEffect
+      value: 
+      objectReference: {fileID: 4303363050381051064, guid: 0f578cf3a1301e74dad3391a3939b649, type: 3}
     - target: {fileID: 7255641860854552789, guid: 58aa51b01f775ab4ba18d9aa059624bf, type: 3}
       propertyPath: m_Name
       value: Player
