@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] private Text hp_txt = null;
     [SerializeField] private Text score_txt = null;
+    [SerializeField] private Text storage_txt = null;
     [SerializeField] private Text result_txt = null;
 
     private bool isPause;
@@ -44,10 +45,11 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (hp_txt != null && score_txt != null)
+        if (hp_txt != null && score_txt != null )
         {
             hp_txt.text = PlayerHealth.instance.hp.ToString();
             score_txt.text = "SCORE  " + score.ToString();
+            storage_txt.text = PlayerInventory.instance.storage.ToString()+"/" + PlayerInventory.instance.maxStorage.ToString();
         }
 
         if(hp_txt != null)

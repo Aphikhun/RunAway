@@ -5,8 +5,8 @@ using UnityEngine;
 public class PlayerInventory : MonoBehaviour
 {
     public Dictionary<string,int> Cards = new();
-    private int maxStorage = 15;
-    private int storage = 0;
+    public int maxStorage = 15;
+    public int storage = 0;
 
     public static PlayerInventory instance;
     // Start is called before the first frame update
